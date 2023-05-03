@@ -1,92 +1,85 @@
-# data-descriptor
+# Data Descriptor
 
+This repository contains: 1) original datasets analyzed in MICA project published papers (`/data_original`), 2)  processing notebooks to prepare data for Level 1 curation at ICPSR (`/notebooks`), 3) and processed files for internal review (`/data_transform`) to publish as a replication dataset for a Nature Scientific Data article.
 
+**Steps**
+- [x] Pre-process and prepare tables by merging project admin data (`/notebooks/transform-data.ipynb`)
+- [ ] Request review by Data Stewardship Committee - discuss whether data can be shared as they are or will require additional transformation
+- [ ] Request Level 1 curation for deposit in ICPSR General Archive
+- [ ] Pre-curate data in SPSS to expedite publication - document variables in a codebook, address missing values, add variable labels using definitions below
 
-## Getting started
+**Sources**
+- `/data_original`
+    - `ICPSR_bib_studies_20211111.xlsx` (DBInfo: Study and Bibliography paper metadata; used in JASIST, ASIS&T, QSS analyses)
+    - `ICPSR_combined_study_usage_20210430_onlyData_noAllREST.xlsx` (DBInfo: data file downloads per study; used in regression analysis studing curation level and data reuse for JASIST)
+    - `jira_curation_level_20210426_by_study.csv` (DBInfo: study curation level; used in regression analysis studing curation level and data reuse for JASIST)
+    - `predicted_curation_by_study.csv` (Jira: study level work log sentences - classified; used in eScience analysis of curation effort and activities)
+    - `processing_history_commands_2019_20220502.csv`(Processing History: commands per study; used in RDAP analysis of data transformation and organizational change)
+    - `variable_counts_by_study.csv` (DBInfo: study variables by data files; used in regression analysis studing curation level and data reuse for JASIST)
+- `/data_transform`
+    - `ICPSR_CURATION_LOGS.csv` (each row is one activity classified from a Jira study-level curation work log)
+    - `ICPSR_PAPERS.csv` (each row is one publication in the ICPSR Bibliography that cites one or more studies)
+    - `ICPSR_PROCESSING_HISTORY.csv` (each row is one study and its processing history commands in SPSS syntax)
+    - `ICPSR_STUDIES.csv` (each row is one study in the ICPSR catalog and its usage information until pull date)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+**Outputs**
+- Bleckley, D., Lafia, S., and Hemphill, L. (2023) Describing Data Transformation Work in a Changing Data Curation Community. Research Data Access and Preservation (RDAP) Summit. Online. March 28.
+- Lafia, S., Fan, L., Thomer, A., & Hemphill, L. (2022). Subdivisions and Crossroads: Identifying Hidden Community Structures in a Data Archive’s Citation Network. Quantitative Science Studies (QSS), 3(3), 694-714. doi: [10.1162/qss_a_00209](https://doi.org/10.1162/qss_a_00209)
+- Lafia, S., Fan, L., and Hemphill, L. (2022). A Natural Language Processing Pipeline for Detecting Informal Data References in Academic Literature. Proceedings of the Association for Information Science and Technology (ASIS&T), 59(1), 169-178. doi:[10.1002/pra2.614](https://doi.org/10.1002/pra2.614)
+- Hemphill, L., Pienta, A., Lafia, S., Akmon, D., & Bleckley, D. (2022). How do properties of data, their curation, and their funding relate to reuse?. Journal of the Association for Information Science and Technology (JASIST), 73(10), 1432-1444. doi:[10.1002/asi.24646](https://doi.org/10.1002/asi.24646)
+- Lafia, S., Thomer, A., Bleckley, D., Akmon, D., & Hemphill, L. (2021). Leveraging Machine Learning to Detect Data Curation Activities. In 2021 IEEE 17th International Conference on eScience (eScience) (pp. 149-158). IEEE. doi:[10.1109/eScience51609.2021.00025](https://doi.org/10.1109/eScience51609.2021.00025)
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+**Entity-Relation Diagram]
+![E-R Diagram](E-R diagram.png)
+[Link](https://docs.google.com/drawings/d/1gY4DGJp4shW6q7cev1G2my1bHf6nKEpoBrKCoPi8UT4/edit?usp=sharing)
 
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.umich.edu/mica/data-descriptor.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.umich.edu/mica/data-descriptor/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+**Variables**
+- `/data_transform/ICPSR_CURATION_LOGS.csv`
+    - STUDY = ICPSR study number
+    - WORK_DESC = ICPSR curator work log entry sentence from Jira ticket
+    - ACTION_LABEL = label assigned to work log text ('Metadata-study-level', 'Quality-checks', 'Non-curation', 'Initial-review-and-planning', 'Communication-for-study', 'Transformation-of-data', 'Documentation', 'Other')
+    - LOG_HRS = fraction of study work time associated with action label
+    - STUDY_HRS = total study work time logged in ticket
+- `/data_transform/ICPSR_PAPERS.csv` (Date papers added: 2000-08-11 to 2021-11-16)
+    - REF_ID = ICPSR paper number
+    - DOI = paper digital object identifier
+    - TITLE = official paper title
+    - AUTHORS = researchers who authored paper
+    - SEC_TITLE = name of publication outlet
+    - RIS_TYPE = type of publication ('NEWS', 'JOUR', 'RPRT', 'MGZN', 'ADVS', 'BOOK', 'CHAP', 'CONF', 'ELEC', 'GEN', 'THES')
+    - FUNDER = organization names that supported data production and/or archiving 
+    - YEAR_PUB = year paper added to ICPSR Bibliography
+    - DATE_INPUT = year paper was first published
+    - SERIES_NUMS = ICPSR series number of studies used in paper
+    - STUDY_NUMS = ICPSR study numbers used in paper
+- `/data_transform/ICPSR_PROCESSING_HISTORY.csv`
+    - STUDY = ICPSR study number
+    - TOTAL_LINES = total lines of code in processing history syntax file
+    - COMMENTS = total count of comments in processing history syntax file
+    - ... = remaining columns contain [SPSS commands](https://www.spss-tutorials.com/overview-all-spss-commands/) (procedures, transformations, other) where each column count of one command per file
+- `/data_transform/ICPSR_STUDIES.csv` (Date studies released: 1984-03-18 to 2021-11-16)
+    - STUDY = ICPSR study number
+    - DOI = ICPSR study digital object identifier
+    - NAME = official ICPSR study name
+    - SERIES = ICPSR series number
+    - SERIES_TITLE = official ICPSR series title
+    - PRINCIPAL_INV = authoring entities for the study
+    - DESCRIPTION = text abstract of the study's subject matter or intellectual content
+    - RELEASE_DATE = m/dd/yyyy date when the data collection was first distributed by ICPSR
+    - FUNDING_AGENCY = organizations that supported production and/or archiving of the data
+    - GEO = ICPSR defined geographic areas covered in data collection
+    - TERMS = ICPSR controlled subject terms covered in data collection
+    - OWNER = archive owner for the data ('ICPSR', 'NACJD', 'DSDR', 'RCMD', 'NAHDAP', 'NACDA', 'NADAC', 'HMCA', 'CFDA', 'civicleads', 'AERA', 'METLDB', 'APA', 'UCC', 'ADDEP', 'odf', 'gmsdata', 'pcoridata', 'pcodr', 'DAIRL', 'appfed')
+    - CURATION_LEVEL = level specifying the set of curation activities to be performed on a given dataset ('Fast Release', 'Level 0', 'Level 1', 'Level 2', 'Level 3', 'Other')
+    - SINGLE_PI = study has one PI entity (0=no, 1=yes)
+    - INST_PI = study has one or more institutional PIs (0=no, 1=yes)
+    - TOT_PI = total count of PIs for a study
+    - TOTAL_VARS = count of variables for all data files per study
+    - SDA = study data made available for online analysis (0=no, 1=yes)
+    - QTEXT = study question text from surveys made searchable (0=no, 1=yes)
+    - SSVD = study variables indexed in social science variable database (0=no, 1=yes)
+    - HAS_RESTRICTED = study contains one or more restricted files (0=no, 1=yes)
+    - ALL_RESTRICTED = full study is restricted and no download information is available (0=no, 1=yes)
+    - USERS_TO_20210511 = count of unique users downloading study data files, codebooks, or other to 2021
+    - DATAUSERS_TO_20210511 = count of unique users downloading study data files only to 2021
+    - CITATIONS_TO_20211116 = count of unique papers citing study to 2021
