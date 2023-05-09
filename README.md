@@ -52,11 +52,10 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
     - DATE_INPUT = year paper was first published
     - SERIES_NUMS = ICPSR series number of studies used in paper
     - STUDY_NUMS = ICPSR study numbers used in paper
-- `/data_transform/ICPSR_PROCESSING_HISTORY.csv`
-    - STUDY = ICPSR study number
-    - TOTAL_LINES = total lines of code in processing history syntax file
-    - COMMENTS = total count of comments in processing history syntax file
-    - ... = remaining columns contain [SPSS commands](https://www.spss-tutorials.com/overview-all-spss-commands/) (procedures, transformations, other) where each column count of one command per file
+<!--`/data_transform/ICPSR_PROCESSING_HISTORY.csv`-->
+<!--    - STUDY = ICPSR study number - TOTAL_LINES = total lines of code in processing history syntax file-->
+<!--    - COMMENTS = total count of comments in processing history syntax file-->
+<!--    - ... = remaining columns contain [SPSS commands](https://www.spss-tutorials.com/overview-all-spss-commands/) (procedures, transformations, other) where each column count of one command per file-->
 - `/data_transform/ICPSR_STUDIES.csv` (Date studies released: 1984-03-18 to 2021-11-16)
     - STUDY = ICPSR study number
     - DOI = ICPSR study digital object identifier
@@ -83,3 +82,9 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
     - USERS_TO_20210511 = count of unique users downloading study data files, codebooks, or other to 2021
     - DATAUSERS_TO_20210511 = count of unique users downloading study data files only to 2021
     - CITATIONS_TO_20211116 = count of unique papers citing study to 2021
+    
+**Usage Notes**
+* Study release date (earliest: 1984) is inaccurate
+* Publication dates (missing or < 1963) recoded to 0
+* Missing study description text ("nan") replaced with empty string ("")
+* Worklogs are split on new line (many to one per Jira ticket) and classified
