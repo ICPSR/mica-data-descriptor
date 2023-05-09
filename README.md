@@ -4,9 +4,9 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
 
 **Steps**
 - [x] Pre-process and prepare tables by merging project admin data (`/notebooks/transform-data.ipynb`)
-- [ ] Request review by Data Stewardship Committee - discuss whether data can be shared as they are or will require additional transformation
-- [ ] Request Level 1 curation for deposit in ICPSR General Archive
+- [x] Request review by Data Stewardship Committee - discuss whether data can be shared as they are or will require additional transformation
 - [ ] Pre-curate data in SPSS to expedite publication - document variables in a codebook, address missing values, add variable labels using definitions below
+- [ ] Request Level 1 curation for deposit in ICPSR General Archive
 
 **Sources**
 - `/data_original`
@@ -29,7 +29,7 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
 - Hemphill, L., Pienta, A., Lafia, S., Akmon, D., & Bleckley, D. (2022). How do properties of data, their curation, and their funding relate to reuse?. Journal of the Association for Information Science and Technology (JASIST), 73(10), 1432-1444. doi:[10.1002/asi.24646](https://doi.org/10.1002/asi.24646)
 - Lafia, S., Thomer, A., Bleckley, D., Akmon, D., & Hemphill, L. (2021). Leveraging Machine Learning to Detect Data Curation Activities. In 2021 IEEE 17th International Conference on eScience (eScience) (pp. 149-158). IEEE. doi:[10.1109/eScience51609.2021.00025](https://doi.org/10.1109/eScience51609.2021.00025)
 
-**Entity-Relation Diagram]
+**Entity-Relation Diagram**
 ![E-R Diagram](E-R diagram.png)
 [Link](https://docs.google.com/drawings/d/1gY4DGJp4shW6q7cev1G2my1bHf6nKEpoBrKCoPi8UT4/edit?usp=sharing)
 
@@ -88,3 +88,5 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
 * Publication dates (missing or < 1963) recoded to 0
 * Missing study description text ("nan") replaced with empty string ("")
 * Worklogs are split on new line (many to one per Jira ticket) and classified
+* This dataset contains data from different pulls, so some variables are null for most studies (e.g., SINGLE_PI, INST_PI)
+* There are studies with negative numbers for TOTAL_VARS, likely from missing value designations (need to document)
