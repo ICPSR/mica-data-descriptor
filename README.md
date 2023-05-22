@@ -10,17 +10,18 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
 
 **Sources**
 - `/data_original`
+    - `enriched_bibliography.csv` (Dimensions database API search; used to expand ICPSR Bibliography)
     - `ICPSR_bib_studies_20211111.xlsx` (DBInfo: Study and Bibliography paper metadata; used in JASIST, ASIS&T, QSS analyses)
     - `ICPSR_combined_study_usage_20210430_onlyData_noAllREST.xlsx` (DBInfo: data file downloads per study; used in regression analysis studing curation level and data reuse for JASIST)
     - `jira_curation_level_20210426_by_study.csv` (DBInfo: study curation level; used in regression analysis studing curation level and data reuse for JASIST)
     - `predicted_curation_by_study.csv` (Jira: study level work log sentences - classified; used in eScience analysis of curation effort and activities)
-    - `processing_history_commands_2019_20220502.csv`(Processing History: commands per study; used in RDAP analysis of data transformation and organizational change)
     - `variable_counts_by_study.csv` (DBInfo: study variables by data files; used in regression analysis studing curation level and data reuse for JASIST)
+<!--    - `processing_history_commands_2019_20220502.csv`(Processing History: commands per study; used in RDAP analysis of data transformation and organizational change) -->
 - `/data_transform`
     - `ICPSR_CURATION_LOGS.csv` (each row is one activity classified from a Jira study-level curation work log)
     - `ICPSR_PAPERS.csv` (each row is one publication in the ICPSR Bibliography that cites one or more studies)
-    - `ICPSR_PROCESSING_HISTORY.csv` (each row is one study and its processing history commands in SPSS syntax)
     - `ICPSR_STUDIES.csv` (each row is one study in the ICPSR catalog and its usage information until pull date)
+<!-- - `ICPSR_PROCESSING_HISTORY.csv` (each row is one study and its processing history commands in SPSS syntax) -->
 
 **Outputs**
 - Bleckley, D., Lafia, S., and Hemphill, L. (2023) Describing Data Transformation Work in a Changing Data Curation Community. Research Data Access and Preservation (RDAP) Summit. Online. March 28.
