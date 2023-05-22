@@ -53,8 +53,8 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
     - DATE_INPUT = year paper was first published
     - SERIES_NUMS = ICPSR series number of studies used in paper
     - STUDY_NUMS = ICPSR study numbers used in paper
-    - DIM_ID = Dimensions database identifierxs
-    - DIM_LINKOUT = Dimensions database URL link to full text
+    - DIM_ID = Dimensions database identifiers to get enriched metadata
+    - DIM_LINKOUT = Dimensions database URL link to full text including abstracts
 <!--`/data_transform/ICPSR_PROCESSING_HISTORY.csv`-->
 <!--    - STUDY = ICPSR study number - TOTAL_LINES = total lines of code in processing history syntax file-->
 <!--    - COMMENTS = total count of comments in processing history syntax file-->
