@@ -30,7 +30,7 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
 - Lafia, S., Thomer, A., Bleckley, D., Akmon, D., & Hemphill, L. (2021). Leveraging Machine Learning to Detect Data Curation Activities. In 2021 IEEE 17th International Conference on eScience (eScience) (pp. 149-158). IEEE. doi:[10.1109/eScience51609.2021.00025](https://doi.org/10.1109/eScience51609.2021.00025)
 
 **Entity-Relation Diagram**
-![E-R Diagram](E-R diagram.png)
+![E-R Diagram](E-R-diagram.png)
 [Link](https://docs.google.com/drawings/d/1gY4DGJp4shW6q7cev1G2my1bHf6nKEpoBrKCoPi8UT4/edit?usp=sharing)
 
 **Variables**
@@ -40,7 +40,7 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
     - ACTION_LABEL = label assigned to work log text ('Metadata-study-level', 'Quality-checks', 'Non-curation', 'Initial-review-and-planning', 'Communication-for-study', 'Transformation-of-data', 'Documentation', 'Other')
     - LOG_HRS = fraction of study work time associated with action label
     - STUDY_HRS = total study work time logged in ticket
-- `/data_transform/ICPSR_PAPERS.csv` (Date papers added: 2000-08-11 to 2021-11-16)
+- `/data_transform/ICPSR_PAPERS.csv` (Date papers added: 2000-08-11 to 2021-11-16; Dimensions: 2021-11-09)
     - REF_ID = ICPSR paper number
     - DOI = paper digital object identifier
     - TITLE = official paper title
@@ -52,6 +52,10 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
     - DATE_INPUT = year paper was first published
     - SERIES_NUMS = ICPSR series number of studies used in paper
     - STUDY_NUMS = ICPSR study numbers used in paper
+    - DIM_ID = Dimensions database identifier
+    - DIM_AUTH_AFFIL = Dimensions database author affiliations
+    - DIM_ABSTRACT = Dimensions database paper abstract
+    - DIM_LINKOUT = Dimensions database URL link to full text
 <!--`/data_transform/ICPSR_PROCESSING_HISTORY.csv`-->
 <!--    - STUDY = ICPSR study number - TOTAL_LINES = total lines of code in processing history syntax file-->
 <!--    - COMMENTS = total count of comments in processing history syntax file-->
