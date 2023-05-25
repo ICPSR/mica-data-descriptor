@@ -37,7 +37,6 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
 **Variables**
 - `/data_transform/ICPSR_CURATION_LOGS.csv`
     - STUDY = ICPSR study number
-    - WORK_DESC = ICPSR curator work log entry sentence from Jira ticket
     - ACTION_LABEL = label assigned to work log text ('Metadata-study-level', 'Quality-checks', 'Non-curation', 'Initial-review-and-planning', 'Communication-for-study', 'Transformation-of-data', 'Documentation', 'Other')
     - LOG_HRS = fraction of study work time associated with action label
     - STUDY_HRS = total study work time logged in ticket
