@@ -1,12 +1,8 @@
 # Data Descriptor
 
-This repository contains: 1) original datasets analyzed in MICA project published papers (`/data_original`), 2)  processing notebooks to prepare data for Level 1 curation at ICPSR (`/notebooks`), 3) and processed files for internal review (`/data_transform`) to publish as a replication dataset for a Nature Scientific Data article.
+This repository describes a dataset developed to measure the impact of archival and data curation decisions on data reuse. The dataset describes 10,605 social science research datasets available through ICSPR, their curation histories, and reuse contexts across 94,755 publications covering 59 years from 1963 to 2022. This dataset provides insights into factors that contribute to long-term data reuse, which can inform the design of evidence-based policies for data curation decisions.
 
-**Steps**
-- [x] Pre-process and prepare tables by merging project admin data (`/notebooks/transform-data.ipynb`)
-- [x] Request review by Data Stewardship Committee - discuss whether data can be shared as they are or will require additional transformation
-- [ ] Pre-curate data in SPSS to expedite publication - document variables in a codebook, address missing values, add variable labels using definitions below
-- [ ] Request Level 1 curation for deposit in ICPSR General Archive
+The repository contains: 1) original administrative files (`/data_original`), 2) pre-curated files combined and published as a replication dataset (`/data_transform`), and 3) notebooks to prepare data for curation at ICPSR (`/notebooks`). The final dataset, "Measuring the Impact of Curation Actions: ICPSR Administrative Data, 1984-2021 (ICPSR-192113)," will be available through ICSPR: https://doi.org/10.3886/ICPSR192113.
 
 **Sources**
 - `/data_original`
@@ -32,7 +28,6 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
 
 **Entity-Relation Diagram**
 ![E-R Diagram](E-R-diagram.png)
-[Link](https://docs.google.com/drawings/d/1gY4DGJp4shW6q7cev1G2my1bHf6nKEpoBrKCoPi8UT4/edit?usp=sharing)
 
 **Variables**
 - `/data_transform/ICPSR_CURATION_LOGS.csv`
@@ -84,11 +79,3 @@ This repository contains: 1) original datasets analyzed in MICA project publishe
     - USERS_TO_20210511 = count of unique users downloading study data files, codebooks, or other to 2021
     - DATAUSERS_TO_20210511 = count of unique users downloading study data files only to 2021
     - CITATIONS_TO_20211116 = count of unique papers citing study to 2021
-    
-**Usage Notes**
-* Study release date (earliest: 1984) is inaccurate
-* Publication dates (missing or < 1963) recoded to 0
-* Missing study description text ("nan") replaced with empty string ("")
-* Worklogs are split on new line (many to one per Jira ticket) and classified
-* This dataset contains data from different pulls, so some variables are null for most studies (e.g., SINGLE_PI, INST_PI)
-* There are studies with negative numbers for TOTAL_VARS, likely from missing value designations (need to document)
